@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&family=Ubuntu+Mono:ital,wght@0,700;1,400&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie Webiste</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav id="nav">
+			<ul id="nav-ul">
+				<div id="left-nav">
+					<li class="current" title="Home"><a onclick="prikaziHome()">Home</a></li>
+					<li title="Movies"><a onclick="prikaziMovies()">Movies</a></li>
+					<li title="Series"><a onclick="prikaziSeries()">Series</a></li>
+					<li title="Cartoons"><a onclick="prikaziCartoons()">Cartoons</a></li>
+					<li title="Animes"><a onclick="prikaziAnimes()">Animes</a></li>
+
+				</div>
+				<div id="right-nav">
+					<div onclick="searchElement()" id="search-icon"><i class="fas fa-search"></i></div>
+					<input onkeydown="searchElementCard()" id="search" type="text"
+						placeholder="What are you looking for?">
+					<li onclick="prikaziLogin()">Login</li>
+					<li title="My Favorite List">
+						<a onclick="prikaziMyList()">
+							<i class="fas fa-heart"></i>
+							<span id="fav"></span>
+						</a>
+					</li>
+					<li onclick="addAndDeleteDisplay()">Add / Delete</li>
+				</div>
+			</ul>
+		</nav>
+		<section id="hero">
+			<div class="slideshow-container" id="slideshow-container"></div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</section>
+		<div id="main">
+			<div id="watch-now-div"></div>
+			<section id="section-text">
+				<h3>Watch Movies Online Free</h3>
+				<p id="main-text">Just a better place to watch movies online for free. It allows you to watch movies
+					online in high quality for free. No registration is required. The content is updated daily with fast
+					streaming servers, multi-language subtitles supported. Just open fmovies.to and watch your favorite
+					movies, tv-shows. We have almost any movie, tv-shows you want to watch! <br><br>
+					Please bookmark fmovies.name to update about fmovies domains. <br>
+					Please help us by sharing this site with your friends. Thanks!
+				</p>
+			</section>
+			<section class="filter-btn-div">
+				<div id="genre-div">
+					<div class="genre-radio-div">
+						<div>
+							<input type="radio" name="genre" id="all" checked>
+							<label for="all" class="label genre">All</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="action">
+							<label for="action" class="label genre">Action</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="adventure">
+							<label for="adventure" class="label genre">Adventure</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="drama">
+							<label for="drama" class="label genre">Drama</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="super-power">
+							<label for="super-power" class="label genre">Super Power</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="animation">
+							<label for="animation" class="label genre">Animation</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="horror">
+							<label for="horror" class="label genre">Horror</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="comedy">
+							<label for="comedy" class="label genre">Comedy</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="thriller">
+							<label for="thriller" class="label genre">Thriller</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="crime">
+							<label for="crime" class="label genre">Crime</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="war">
+							<label for="war" class="label genre">War</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="romance">
+							<label for="romance" class="label genre">Romance</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="Sci-Fi">
+							<label for="Sci-Fi" class="label genre">Sci-Fi</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="mystery">
+							<label for="mystery" class="label genre">Mystery</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="history">
+							<label for="history" class="label genre">History</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="family">
+							<label for="family" class="label genre">Family</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="fantasy">
+							<label for="fantasy" class="label genre">Fantasy</label>
+						</div>
+						<div>
+							<input type="radio" name="genre" id="sport">
+							<label for="sport" class="label genre">Sport</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="year-div">
+					<div class="year-radio-div">
+						<div>
+							<input type="radio" name="year" id="2021">
+							<label for="2021" class="label year">2021</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2020">
+							<label for="2020" class="label year">2020</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2019">
+							<label for="2019" class="label year">2019</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2018">
+							<label for="2018" class="label year">2018</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2017">
+							<label for="2017" class="label year">2017</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2016">
+							<label for="2016" class="label year">2016</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2015">
+							<label for="2015" class="label year">2015</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2014">
+							<label for="2014" class="label year">2014</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2013">
+							<label for="2013" class="label year">2013</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2012">
+							<label for="2012" class="label year">2012</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2011">
+							<label for="2011" class="label year">2011</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2010">
+							<label for="2010" class="label year">2010</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2009">
+							<label for="2009" class="label year">2009</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2008">
+							<label for="2008" class="label year">2008</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2007">
+							<label for="2007" class="label year">2007</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2006">
+							<label for="2006" class="label year">2006</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2005">
+							<label for="2005" class="label year">2005</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2004">
+							<label for="2004" class="label year">2004</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2003">
+							<label for="2003" class="label year">2003</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2002">
+							<label for="2002" class="label year">2002</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2001">
+							<label for="2001" class="label year">2001</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="2000">
+							<label for="2000" class="label year">2000</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="1999">
+							<label for="1999" class="label year">1999</label>
+						</div>
+						<div>
+							<input type="radio" name="year" id="1998">
+							<label for="1998" class="label year">1998</label>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div id="my-list-table"></div>
+			<div id="movies-card-div"></div>
+			<div id="komentar-wrapper" style="display: none"></div>
+		</div>
+
+		<footer id="footer">
+			<div id="left-footer">
+				<h3>Free Movies</h3>
+				<p>This site is top of free streaming website, where to watch movies online free without registration
+					required. With a big database and great features, we're confident FMovies is the best free movies
+					online
+					website in the space that you can't simply miss!
+					This site does not store any files on our server, we only linked to the media which is hosted on 3rd
+					party services.</p>
+				<span>To keep up with all of the exciting things happening at Free Movies follow us at :</span>
+				<i class="fab fa-facebook-square"></i>
+				<i class="fab fa-instagram"></i>
+				<i class="fab fa-twitter"></i>
+				<i class="fab fa-linkedin-in"></i>
+				<i class="fab fa-discord"></i>
+			</div>
+			<div id="right-footer">
+				<h3>About Free Movies</h3>
+				<p>
+					We love movies! This site was created for people like us who want to watch "Great Movies. Free." It
+					has full-length movies that will make you laugh, make you cry, scare the heck out of you, or inspire
+					you to hug the person you love.
+					We have compelling documentaries, foreign films, unique original web
+					series, and a place that showcases the brightest film makers of tomorrow.
+				</p>
+				<p>We built it to be the most
+					user friendly movie destination on the web. No movie is more than two clicks away and they are all
+					FREE.</p>
+			</div>
+		</footer>
+
+		<div id="video-warning"></div>
+		<div id="modal">
+			<div id="form-div" class="animate"></div>
+		</div>
+		<div id="suggestions"></div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<!-- <script src="TVshows.js"></script> -->
+	<script src="main.js"></script>
+</body>
+
+</html>
